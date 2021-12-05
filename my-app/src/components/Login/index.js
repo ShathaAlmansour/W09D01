@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const URL = "http://localhost:5000";
 
-
 const Login = () => {
   const navigate = useNavigate();
   const [err, setErr] = useState("");
@@ -18,10 +17,10 @@ const Login = () => {
       if (result.data.token) {
         localStorage.setItem("token", result.data.token);
         localStorage.setItem("role", result.data.result.role.role);
-        if(result.data.result.role.role=='admin'){
-            navigate('/');
-        }else{
-            navigate("/Task");
+        if (result.data.result.role.role == "admin") {
+          navigate("/");
+        } else {
+          navigate("/Task");
         }
       } else {
         setErr(result.data);

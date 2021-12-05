@@ -33,7 +33,8 @@ const Post = () => {
   const newTask = async (e) => {
     try {
       e.preventDefault();
-      const result = await axios.post(`${URL}/task`,
+      const result = await axios.post(
+        `${URL}/task`,
         {
           name: e.target.task.value,
         },
@@ -81,4 +82,3 @@ const Post = () => {
 };
 
 export default Post;
-
